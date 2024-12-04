@@ -1,3 +1,4 @@
 krpc
 matplotlib
+numpy
 scipy
