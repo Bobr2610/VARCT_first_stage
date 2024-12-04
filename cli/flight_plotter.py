@@ -1,6 +1,6 @@
-from libs.collector import Collector
-from libs.config import Config
-from libs.vessel import Vessel
+from varkt.collector import Collector
+from varkt.config import Config
+from varkt.vessel import Vessel
 
 
 if __name__ == '__main__':

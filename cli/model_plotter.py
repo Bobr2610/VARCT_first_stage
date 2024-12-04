@@ -1,11 +1,11 @@
-from libs.collector import Collector
-from libs.config import Config
-from libs.model import Model
+from varkt.collector import Collector
+from varkt.config import Config
+from varkt.model import Model
 
 
 if __name__ == '__main__':
     model = Model()
-    config = Config(1, 0)
+    config = Config(20, 0.1)
 
     collector = Collector(model, config)
     collector.collect()
