@@ -30,7 +30,7 @@ class Model(DataSource):
     m_2 = 308.5
     phi = np.pi / 180
     n = 2
-    k = 0  # TODO
+    k = 0 # TODO
 
     def height_formula(self):
         pass
