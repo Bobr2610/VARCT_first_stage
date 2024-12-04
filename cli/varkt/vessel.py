@@ -2,7 +2,7 @@ from time import sleep
 
 import krpc.services.spacecenter
 
-from data_source import DataSource
+from .data_source import DataSource
 
 
 class Vessel(DataSource):

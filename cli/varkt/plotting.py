@@ -42,10 +42,15 @@ class Plotter:
         self.mass_graphic = Graphic(ax[1, 1], 'mass')
 
     def update(self, time: int, height: int, speed: int, angle: int, mass: int):
+        print('Time: ', time)
+        print('Height: ', height)
+        print('Speed: ', speed)
+        print('Angle: ', angle)
+        print('Mass: ', mass)
         self.height_graphic.update(time, height)
         self.speed_graphic.update(time, speed)
         self.angle_graphic.update(time, angle)
         self.mass_graphic.update(time, mass)
 
-    def pause(self, interval: int):
+    def pause(self, interval: float):
         plt.pause(interval)

@@ -1,8 +1,8 @@
 class Timer:
     time: int
-    interval: int
+    interval: float
 
-    def __init__(self, interval: int):
+    def __init__(self, interval: float):
         self.time = 0
         self.interval = interval
 
