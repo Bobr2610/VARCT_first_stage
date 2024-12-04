@@ -2,11 +2,11 @@ ship = Sputnik-1
 version = 1.12.5
 description = 
 type = VAB
-size = 6.19914675,18.3187256,6.1991744
+size = 6.19914675,18.3187256,6.19917727
 steamPublishedFileId = 0
 persistentId = 3427369372
 rot = 0,0,0,0
-missionFlag = Squad/Flags/A(2)
+missionFlag = Squad/Flags/rings
 vesselType = Debris
 OverrideDefault = False,False,False,False
 OverrideActionControl = 0,0,0,0
@@ -166,695 +166,6 @@ PART
 		}
 		ACTIONS
 		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = MechJebCore
-		isEnabled = True
-		running = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnOrbitProgradeAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnOrbitRetrogradeAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnOrbitNormalAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnOrbitAntinormalAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnOrbitRadialInAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnOrbitRadialOutAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnKillRotationAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnDeactivateSmartASSAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnLandsomewhereAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnLandTargetAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnPanicAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnTranslatronOffAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnTranslatronKeepVertAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnTranslatronZeroSpeedAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnTranslatronPlusOneSpeedAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnTranslatronMinusOneSpeedAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnTranslatronToggleHSAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnAscentAPToggleAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		MechJebLocalSettings
-		{
-			MechJebModuleMenu
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleRoverWindow
-			{
-				unlockParts = 
-				unlockTechs = fieldScience
-			}
-			MechJebModuleAttitudeAdjustment
-			{
-				unlockParts = 
-				unlockTechs = advFlightControl
-			}
-			MechJebModuleAscentNavBall
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleLogicalStageTracking
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleRCSBalancerWindow
-			{
-				unlockParts = 
-				unlockTechs = advFlightControl
-			}
-			MechJebModuleRoverController
-			{
-				ControlHeading = False
-				ControlSpeed = False
-				BrakeOnEject = False
-				BrakeOnEnergyDepletion = False
-				WarpToDaylight = False
-				StabilityControl = False
-				LimitAcceleration = False
-				unlockParts = 
-				unlockTechs = 
-				heading
-				{
-					_val = 0
-					_text = 0
-				}
-				speed
-				{
-					_val = 10
-					_text = 10
-				}
-			}
-			MechJebModuleSpaceplaneGuidance
-			{
-				runwayIndex = 0
-				unlockParts = 
-				unlockTechs = unmannedTech
-			}
-			MechJebModuleAscentPVG
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleInfoItems
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleSmartRcs
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleAscentClassic
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleSpaceplaneAutopilot
-			{
-				bBreakAsSoonAsLanded = False
-				unlockParts = 
-				unlockTechs = 
-				glideslope
-				{
-					_val = 2.5
-					_text = 2.5
-				}
-				approachSpeed
-				{
-					_val = 80
-					_text = 80
-				}
-				touchdownSpeed
-				{
-					_val = 60
-					_text = 60
-				}
-				maximumSafeBankAngle
-				{
-					_val = 25
-					_text = 25
-				}
-			}
-			MechJebModuleAirplaneAutopilot
-			{
-				HeadingHoldEnabled = False
-				AltitudeHoldEnabled = False
-				VertSpeedHoldEnabled = False
-				RollHoldEnabled = False
-				SpeedHoldEnabled = False
-				AltitudeTarget = 0
-				HeadingTarget = 90
-				RollTarget = 0
-				SpeedTarget = 0
-				VertSpeedTarget = 0
-				BankAngle = 30
-				unlockParts = 
-				unlockTechs = 
-				AccKp
-				{
-					_val = 0.5
-					_text = 0.5
-				}
-				AccKi
-				{
-					_val = 0.5
-					_text = 0.5
-				}
-				AccKd
-				{
-					_val = 0.0050000000000000001
-					_text = 0.005
-				}
-				PitKp
-				{
-					_val = 2
-					_text = 2
-				}
-				PitKi
-				{
-					_val = 1
-					_text = 1
-				}
-				PitKd
-				{
-					_val = 0.0050000000000000001
-					_text = 0.005
-				}
-				RolKp
-				{
-					_val = 0.5
-					_text = 0.5
-				}
-				RolKi
-				{
-					_val = 0.02
-					_text = 0.02
-				}
-				RolKd
-				{
-					_val = 0.5
-					_text = 0.5
-				}
-				YawKp
-				{
-					_val = 1
-					_text = 1
-				}
-				YawKi
-				{
-					_val = 0.25
-					_text = 0.25
-				}
-				YawKd
-				{
-					_val = 0.02
-					_text = 0.02
-				}
-				YawLimit
-				{
-					_val = 10
-					_text = 10
-				}
-				RollLimit
-				{
-					_val = 45
-					_text = 45
-				}
-				PitchDownLimit
-				{
-					_val = 15
-					_text = 15
-				}
-				PitchUpLimit
-				{
-					_val = 25
-					_text = 25
-				}
-			}
-			MechJebModuleDockingGuidance
-			{
-				unlockParts = 
-				unlockTechs = advUnmanned
-			}
-			MechJebModuleSettings
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleAscentGT
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleDebugArrows
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleSmartASS
-			{
-				mode = ORBITAL
-				target = OFF
-				advReference = INERTIAL
-				advDirection = FORWARD
-				forceRol = False
-				forcePitch = True
-				forceYaw = True
-				unlockParts = 
-				unlockTechs = flightControl
-				srfHdg
-				{
-					_val = 90
-					_text = 90
-				}
-				srfPit
-				{
-					_val = 90
-					_text = 90
-				}
-				srfRol
-				{
-					_val = 0
-					_text = 0
-				}
-				srfVelYaw
-				{
-					_val = 0
-					_text = 0
-				}
-				srfVelPit
-				{
-					_val = 0
-					_text = 0
-				}
-				srfVelRol
-				{
-					_val = 0
-					_text = 0
-				}
-				rol
-				{
-					_val = 0
-					_text = 0
-				}
-			}
-			MechJebModuleDockingAutopilot
-			{
-				forceRol = False
-				overrideSafeDistance = False
-				overrideTargetSize = False
-				unlockParts = 
-				unlockTechs = 
-				rol
-				{
-					_val = 0
-					_text = 0
-				}
-			}
-			ModExtensionDemo
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleThrustWindow
-			{
-				autostageSavedState = False
-				unlockParts = 
-				unlockTechs = advFlightControl
-			}
-			MechJebModuleWarpHelper
-			{
-				unlockParts = 
-				unlockTechs = advFlightControl
-				phaseAngle
-				{
-					_val = 0
-					_text = 0
-				}
-			}
-			MechJebModuleCustomWindowEditor
-			{
-				unlockParts = 
-				unlockTechs = flightControl
-			}
-			MechJebModuleAscentAutopilot
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleRendezvousAutopilotWindow
-			{
-				unlockParts = 
-				unlockTechs = advUnmanned
-			}
-			MechJebModuleNodeExecutor
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleNodeEditor
-			{
-				unlockParts = 
-				unlockTechs = advFlightControl
-			}
-			MechJebModuleLandingAutopilot
-			{
-				deployGears = True
-				deployChutes = True
-				rcsAdjustment = True
-				unlockParts = 
-				unlockTechs = 
-				touchdownSpeed
-				{
-					_val = 0.5
-					_text = 0.5
-				}
-				limitGearsStage
-				{
-					val = 0
-					_text = 0
-				}
-				limitChutesStage
-				{
-					val = 0
-					_text = 0
-				}
-			}
-			MechJebModuleScript
-			{
-				minifiedGUI = False
-				selectedSlot = 0
-				selectedMemorySlotType = 0
-				activeSavepoint = -1
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleLandingGuidance
-			{
-				landingSiteIdx = 0
-				unlockParts = 
-				unlockTechs = unmannedTech
-			}
-			MechJebModuleLandingPredictions
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleTranslatron
-			{
-				unlockParts = 
-				unlockTechs = advFlightControl
-				trans_spd
-				{
-					_val = 0
-					_text = 0
-				}
-			}
-			MechJebModuleAscentGuidance
-			{
-				unlockParts = 
-				unlockTechs = unmannedTech
-			}
-			MechJebModuleRendezvousAutopilot
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleWaypointWindow
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleWaypointHelpWindow
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleTargetController
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleManeuverPlanner
-			{
-				unlockParts = 
-				unlockTechs = advFlightControl
-			}
-			MechJebModuleStageStats
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleAirplaneGuidance
-			{
-				showpid = False
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleGuidanceController
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleRendezvousGuidance
-			{
-				unlockParts = 
-				unlockTechs = advUnmanned
-			}
-			MechJebModuleAscentClassicMenu
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleCustomInfoWindow
-			{
-			}
-			MechJebModuleCustomInfoWindow
-			{
-			}
-			MechJebModuleCustomInfoWindow
-			{
-			}
-			MechJebModuleCustomInfoWindow
-			{
-			}
-			MechJebModuleCustomInfoWindow
-			{
-			}
-			MechJebModuleCustomInfoWindow
-			{
-			}
-			MechJebModuleCustomInfoWindow
-			{
-			}
-			MechJebModuleCustomInfoWindow
-			{
-			}
-			MechJebModuleCustomInfoWindow
-			{
-			}
-			MechJebModuleWarpController
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleDeployableAntennaController
-			{
-				prev_shouldDeploy = False
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleSolarPanelController
-			{
-				prev_shouldDeploy = False
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleThrustController
-			{
-				limitThrottle = False
-				limiterMinThrottle = False
-				electricThrottle = False
-				unlockParts = 
-				unlockTechs = 
-				maxThrottle
-				{
-					_val = 1
-					_text = 100
-				}
-				minThrottle
-				{
-					_val = 0.050000000000000003
-					_text = 5
-				}
-				electricThrottleLo
-				{
-					_val = 0.050000000000000003
-					_text = 5
-				}
-				electricThrottleHi
-				{
-					_val = 0.14999999999999999
-					_text = 15
-				}
-			}
-			MechJebModuleRCSController
-			{
-				unlockParts = 
-				unlockTechs = 
-				Tf
-				{
-					_val = 1
-					_text = 1
-				}
-				Kp
-				{
-					_val = 0.125
-					_text = 0.125
-				}
-				Ki
-				{
-					_val = 0.070000000000000007
-					_text = 0.07
-				}
-				Kd
-				{
-					_val = 0.53000000000000003
-					_text = 0.53
-				}
-			}
-			MechJebModuleRCSBalancer
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleAttitudeController
-			{
-				unlockParts = 
-				unlockTechs = 
-				MJAttitudeController
-				{
-				}
-				KosAttitudeController
-				{
-				}
-				HybridController
-				{
-				}
-				BetterController
-				{
-				}
-			}
-			MechJebModuleStagingController
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleFlightRecorder
-			{
-				markUT = 0
-				deltaVExpended = 0
-				dragLosses = 0
-				gravityLosses = 0
-				steeringLosses = 0
-				markLAN = 0
-				markLatitude = 0
-				markLongitude = 0
-				markAltitude = 0
-				markBodyIndex = 1
-				maxDragGees = 0
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleFlightRecorderGraph
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -1076,7 +387,7 @@ PART
 	part = longAntenna_4293594994
 	partName = Part
 	persistentId = 3134786472
-	pos = -0.264106363,15.1880236,-0.233271465
+	pos = -0.264106423,15.1880236,-0.233271405
 	attPos = 0,0,0
 	attPos0 = 3.80678102E-08,-0.182021171,-0.260746151
 	rot = 0.684089899,-0.177423224,-0.684938669,-0.177203462
@@ -1237,7 +548,7 @@ PART
 	part = longAntenna_4293594930
 	partName = Part
 	persistentId = 601895323
-	pos = -0.00335863768,15.1880236,-0.494018614
+	pos = -0.00335857808,15.1880236,-0.494018674
 	attPos = 0,0,0
 	attPos0 = -0.260746121,-0.182021171,0
 	rot = 0.968049407,-0.000155389309,-0.000600069761,-0.250758946
@@ -1398,7 +709,7 @@ PART
 	part = longAntenna_4293594866
 	partName = Part
 	persistentId = 3977513426
-	pos = 0.257387638,15.1880236,-0.233271673
+	pos = 0.257387698,15.1880236,-0.233271733
 	attPos = 0,0,0
 	attPos0 = -1.52504054E-08,-0.182021171,0.260746151
 	rot = 0.684938669,0.177203462,0.684089899,-0.177423224
@@ -1559,7 +870,7 @@ PART
 	part = longAntenna_4293594802
 	partName = Part
 	persistentId = 3467118136
-	pos = -0.00336003839,15.1880236,0.0274754018
+	pos = -0.003360098,15.1880236,0.0274754614
 	attPos = 0,0,0
 	attPos0 = 0.260746121,-0.182021171,-2.98023224E-08
 	rot = -0.000600099564,-0.250758886,-0.968049526,0.00015540421
@@ -1720,7 +1031,7 @@ PART
 	part = batteryPack_4293594738
 	partName = Part
 	persistentId = 1195551606
-	pos = 0.00566608086,15.0055475,-0.242296994
+	pos = 0.00566608459,15.0055475,-0.242296994
 	attPos = -0.233741671,0.0118217263,0.233741626
 	attPos0 = 0.224716291,-0.0113668246,-0.224716216
 	rot = -0.923732042,0.00683998456,-0.382622272,-0.0165131874
@@ -1952,7 +1263,7 @@ PART
 	part = batteryPack_4293594670
 	partName = Part
 	persistentId = 3827943983
-	pos = -0.0123848515,15.0055475,-0.224246174
+	pos = -0.0123848552,15.0055475,-0.224246174
 	attPos = 0.233741671,0.0118217263,-0.233741656
 	attPos0 = -0.224716291,-0.0113668246,0.224716231
 	rot = 0.382622272,0.0165131874,-0.923732042,0.00683998642
@@ -2947,6 +2258,7 @@ PART
 	link = strutConnector_4293590618
 	link = strutConnector_4293590526
 	link = strutConnector_4293590434
+	link = flagPartSize1_4292772528
 	attN = top,fairingSize1p5_4293594502_0|1.875|0_0|1|0_0|1.875|0_0|1|0
 	attN = bottom,Size1p5.Size1.Adapter.01_4293594216_0|-1.875|0_0|-1|0_0|-1.875|0_0|-1|0
 	EVENTS
@@ -6148,7 +5460,7 @@ PART
 	part = Size1p5.Tank.05_4293592872
 	partName = Part
 	persistentId = 3021595826
-	pos = -0.00388866197,6.11470985,-1.92274678
+	pos = -0.00388866197,6.11470985,-1.92274725
 	attPos = 2.38418579E-07,-0.0632381439,-5.96045993E-07
 	attPos0 = -1.10156083,2.83844852,-1.19209197E-07
 	rot = -0.00754658226,-4.17232513E-07,4.19093382E-09,-0.999971628
@@ -6357,7 +5669,7 @@ PART
 	part = LiquidEngineRK-7_4293592812
 	partName = Part
 	persistentId = 2854174770
-	pos = -0.00388925499,1.61522293,-1.99067616
+	pos = -0.00388925499,1.61522293,-1.99067712
 	attPos = -2.38418352E-07,0,-2.38418664E-07
 	attPos0 = -1.24239023E-07,-4.5,-1.78813877E-07
 	rot = 0.0075466726,8.94069672E-08,-5.35507727E-09,0.999971628
@@ -6621,7 +5933,7 @@ PART
 	part = LiquidEngineRV-1_4293592654
 	partName = Part
 	persistentId = 2337896460
-	pos = -0.383789301,1.31323433,-2.65331507
+	pos = -0.383789539,1.31323433,-2.6533165
 	attPos = 0.165605932,5.96046448E-08,0.286838174
 	attPos0 = -0.545502186,-0.311955631,-0.944836438
 	rot = 0.001953264,-0.965898335,-0.0072893668,0.25881207
@@ -6863,7 +6175,7 @@ PART
 	part = LiquidEngineRV-1_4293592580
 	partName = Part
 	persistentId = 3838385438
-	pos = 0.376436353,1.30641842,-2.65415525
+	pos = 0.376436591,1.30641842,-2.65415668
 	attPos = -0.164974719,5.96046448E-08,0.285743535
 	attPos0 = 0.545296431,-0.318782985,-0.944481492
 	rot = -0.00195327215,-0.965898395,-0.00728936167,-0.258811921
@@ -7105,7 +6417,7 @@ PART
 	part = basicFin_4293592506
 	partName = Part
 	persistentId = 3730209291
-	pos = -0.00388830435,1.30391693,-2.77618885
+	pos = -0.00388830435,1.30391693,-2.77619028
 	attPos = -4.84455086E-07,0.00235512853,0.156016171
 	attPos0 = 4.10329932E-07,-0.325481117,-0.9367342
 	rot = 0.00533617754,-0.707086682,-0.00533618499,0.707086802
@@ -7225,10 +6537,10 @@ PART
 	part = launchClamp1_4293592476
 	partName = Part
 	persistentId = 3861678042
-	pos = -0.00389009248,1.54641056,-3.83598852
+	pos = -0.00389009248,1.54641056,-3.83598971
 	attPos = 0,0,0
 	attPos0 = -2.3841875E-07,-4.59665298,-1.84405935
-	rot = 0.0796323046,4.17232513E-07,-2.2351724E-08,0.996824443
+	rot = 0.0796323121,4.17232513E-07,-1.86264337E-08,0.996824384
 	attRot = 0,0,0,1
 	attRot0 = -0.0721072927,0,0,-0.997396946
 	mir = 1,1,1
@@ -7278,10 +6590,10 @@ PART
 	{
 		name = LaunchClamp
 		isEnabled = True
-		scaleFactor = 0.92798084
-		height = 2.34147835
+		scaleFactor = 0.927980423
+		height = 2.34147739
 		stagingEnabled = True
-		towerRot = -0.0796322897,-4.15722951E-07,1.82007387E-08,0.996824324
+		towerRot = -0.0796323121,-4.15724713E-07,1.84335676E-08,0.996824384
 		EVENTS
 		{
 		}
@@ -7768,7 +7080,7 @@ PART
 	part = LiquidEngineRK-7_4293592260
 	partName = Part
 	persistentId = 3177997556
-	pos = -1.76235235,1.61522293,-0.232197151
+	pos = -1.76235235,1.61522293,-0.232197195
 	attPos = -2.33389159E-07,0,-2.68221072E-07
 	attPos0 = -1.24239023E-07,-4.5,-1.78813877E-07
 	rot = 0.00533629907,0.707086742,-0.00533630606,0.707086623
@@ -8032,10 +7344,10 @@ PART
 	part = LiquidEngineRV-1_4293592102
 	partName = Part
 	persistentId = 1275135921
-	pos = -2.42498589,1.31323433,0.147701249
+	pos = -2.42498589,1.31323433,0.147701338
 	attPos = 0.165606558,5.96046448E-08,0.286838353
 	attPos0 = -0.545502126,-0.311955631,-0.944836557
-	rot = -0.0037731952,-0.499985695,-0.0065355273,0.866000891
+	rot = -0.00377319474,-0.499985725,-0.00653552683,0.866000831
 	attRot = 0,0,0,1
 	attRot0 = 4.30748877E-08,-0.965925813,1.60757594E-07,0.258819252
 	mir = 1,1,1
@@ -8274,7 +7586,7 @@ PART
 	part = LiquidEngineRV-1_4293592028
 	partName = Part
 	persistentId = 1424784866
-	pos = -2.42582893,1.30641747,-0.612520337
+	pos = -2.42582893,1.30641747,-0.612520456
 	attPos = -0.16497463,5.96046448E-08,0.285743594
 	attPos0 = 0.545296431,-0.318782985,-0.944481552
 	rot = -0.0065355259,-0.866000891,-0.00377318659,0.499985814
@@ -8516,10 +7828,10 @@ PART
 	part = basicFin_4293591954
 	partName = Part
 	persistentId = 3706972516
-	pos = -2.54786658,1.30391693,-0.232196704
+	pos = -2.54786682,1.30391693,-0.232196763
 	attPos = 4.09913454E-08,0.00235512853,0.156015873
 	attPos0 = 4.16067323E-08,-0.325481117,-0.936734259
-	rot = -3.84712173E-09,2.9790499E-08,-0.00754649006,0.999971628
+	rot = -3.84712129E-09,2.9790499E-08,-0.00754648913,0.999971628
 	attRot = 0,0,0,1
 	attRot0 = -1.24687503E-07,-0.707106769,1.23654402E-07,0.707106829
 	mir = 1,1,1
@@ -8636,10 +7948,10 @@ PART
 	part = launchClamp1_4293591924
 	partName = Part
 	persistentId = 3835683964
-	pos = -3.60767007,1.54641056,-0.232194453
+	pos = -3.60767055,1.54641056,-0.232194453
 	attPos = 0,0,0
 	attPos0 = 2.33789557E-08,-4.59665298,-1.84405911
-	rot = 0.0563085154,0.704861343,-0.0563085489,0.704861104
+	rot = 0.0563085265,0.704861343,-0.0563085563,0.704861104
 	attRot = 0,0,0,1
 	attRot0 = -0.0721073002,8.94069672E-08,-4.88944352E-09,-0.997396946
 	mir = 1,1,1
@@ -8689,10 +8001,10 @@ PART
 	{
 		name = LaunchClamp
 		isEnabled = True
-		scaleFactor = 0.92798084
-		height = 2.34147835
+		scaleFactor = 0.927980423
+		height = 2.34147739
 		stagingEnabled = True
-		towerRot = -0.0563085154,-0.704861343,0.0563085489,0.704861104
+		towerRot = -0.0563085265,-0.704861343,0.0563085601,0.704861104
 		EVENTS
 		{
 		}
@@ -8970,7 +8282,7 @@ PART
 	part = Size1p5.Tank.05_4293591768
 	partName = Part
 	persistentId = 2563831198
-	pos = -0.00388830435,6.11470985,1.45835364
+	pos = -0.00388830435,6.11470985,1.45835412
 	attPos = 1.1920929E-07,-0.0632381439,-5.96045936E-07
 	attPos0 = -1.10156119,2.83844852,-1.19209183E-07
 	rot = 4.19136548E-09,-0.999971628,0.00754658226,4.17232513E-07
@@ -9179,7 +8491,7 @@ PART
 	part = LiquidEngineRK-7_4293591708
 	partName = Part
 	persistentId = 2684079126
-	pos = -0.00388806895,1.61522293,1.52627897
+	pos = -0.00388806895,1.61522293,1.52627993
 	attPos = -2.38045743E-07,0,-2.682211E-07
 	attPos0 = -1.24239023E-07,-4.5,-1.78813877E-07
 	rot = -8.84797302E-09,0.999971628,-0.0075466726,-8.94069672E-08
@@ -9443,10 +8755,10 @@ PART
 	part = LiquidEngineRV-1_4293591550
 	partName = Part
 	persistentId = 2340696559
-	pos = 0.376011968,1.31323433,2.18891716
+	pos = 0.376012206,1.31323433,2.18891835
 	attPos = 0.165605932,5.96046448E-08,0.286838353
 	attPos0 = -0.545501947,-0.311955631,-0.944837093
-	rot = -0.00728936167,0.258811951,-0.00195326097,0.965898335
+	rot = -0.00728936121,0.258811951,-0.00195326097,0.965898335
 	attRot = 0,0,0,1
 	attRot0 = 4.30748983E-08,-0.965925872,1.60757594E-07,0.258819163
 	mir = 1,1,1
@@ -9685,7 +8997,7 @@ PART
 	part = LiquidEngineRV-1_4293591476
 	partName = Part
 	persistentId = 2060348968
-	pos = -0.38421309,1.30641842,2.18976068
+	pos = -0.384213328,1.30641842,2.18976212
 	attPos = -0.164974958,5.96046448E-08,0.285742998
 	attPos0 = 0.545296669,-0.318782985,-0.944481552
 	rot = -0.00728936354,-0.258811563,0.00195327401,0.965898514
@@ -9927,7 +9239,7 @@ PART
 	part = basicFin_4293591402
 	partName = Part
 	persistentId = 3582150651
-	pos = -0.00388782751,1.30391693,2.31179094
+	pos = -0.00388782751,1.30391693,2.31179237
 	attPos = 1.11592833E-07,0.00235512853,0.156018019
 	attPos0 = -6.62180639E-08,-0.325481117,-0.936735094
 	rot = -0.00533618592,0.707086802,-0.0053361766,0.707086682
@@ -10047,10 +9359,10 @@ PART
 	part = launchClamp1_4293591372
 	partName = Part
 	persistentId = 2530014683
-	pos = -0.00388580095,1.54641151,3.37159824
+	pos = -0.00388580095,1.54641151,3.37159944
 	attPos = 0,0,0
 	attPos0 = 1.23463678E-07,-4.59665298,-1.84406078
-	rot = -2.23990533E-08,0.996824384,-0.0796324015,-3.27825546E-07
+	rot = -1.8673763E-08,0.996824384,-0.0796324089,-3.27825546E-07
 	attRot = 0,0,0,1
 	attRot0 = -0.0721073002,8.94069672E-08,-4.88944352E-09,-0.997396946
 	mir = 1,1,1
@@ -10100,10 +9412,10 @@ PART
 	{
 		name = LaunchClamp
 		isEnabled = True
-		scaleFactor = 0.927981138
+		scaleFactor = 0.92798084
 		height = 2.34147835
 		stagingEnabled = True
-		towerRot = 2.21350334E-08,-0.996824324,0.0796323866,-3.26343127E-07
+		towerRot = 1.84098568E-08,-0.996824324,0.0796324015,-3.26315018E-07
 		EVENTS
 		{
 		}
@@ -10590,7 +9902,7 @@ PART
 	part = LiquidEngineRK-7_4293591156
 	partName = Part
 	persistentId = 1916974444
-	pos = 1.75457489,1.61522293,-0.232196614
+	pos = 1.75457489,1.61522293,-0.232196569
 	attPos = 0,0,0
 	attPos0 = -1.24239023E-07,-4.5,-1.78813877E-07
 	rot = -0.00533630606,0.707086623,-0.00533629907,-0.707086742
@@ -10854,7 +10166,7 @@ PART
 	part = LiquidEngineRV-1_4293590998
 	partName = Part
 	persistentId = 3929696871
-	pos = 2.41720772,1.31323433,-0.612096071
+	pos = 2.41720772,1.31323433,-0.61209619
 	attPos = 0.165605992,5.96046448E-08,0.28683871
 	attPos0 = -0.545502186,-0.311955631,-0.944836915
 	rot = -0.00653552497,0.86600101,0.00377319474,0.499985516
@@ -11096,7 +10408,7 @@ PART
 	part = LiquidEngineRV-1_4293590924
 	partName = Part
 	persistentId = 743207640
-	pos = 2.41805172,1.30641747,0.14812611
+	pos = 2.41805172,1.30641747,0.14812623
 	attPos = -0.164974898,5.96046448E-08,0.285743713
 	attPos0 = 0.545296729,-0.318782985,-0.944482327
 	rot = -0.00377318729,0.499985635,0.00653552637,0.86600095
@@ -11338,10 +10650,10 @@ PART
 	part = basicFin_4293590850
 	partName = Part
 	persistentId = 3795094150
-	pos = 2.54008603,1.30391598,-0.232196584
+	pos = 2.54008627,1.30391598,-0.232196525
 	attPos = 3.39014747E-07,0.00235512853,0.156016231
 	attPos0 = -7.76028415E-08,-0.325481117,-0.936734378
-	rot = -0.00754649006,0.999971628,3.84712173E-09,-2.9790499E-08
+	rot = -0.00754648913,0.999971628,3.84712129E-09,-2.9790499E-08
 	attRot = 0,0,0,1
 	attRot0 = -1.24687503E-07,-0.707106769,1.23654402E-07,0.707106829
 	mir = 1,1,1
@@ -11458,10 +10770,10 @@ PART
 	part = launchClamp1_4293590820
 	partName = Part
 	persistentId = 326544534
-	pos = 3.59989357,1.54641056,-0.232199311
+	pos = 3.59989405,1.54641056,-0.232199311
 	attPos = 0,0,0
 	attPos0 = 1.42588462E-07,-4.59665298,-1.84405947
-	rot = -0.0563085489,0.704861104,-0.0563085154,-0.704861343
+	rot = -0.0563085563,0.704861104,-0.0563085265,-0.704861343
 	attRot = 0,0,0,1
 	attRot0 = -0.0721073002,8.94069672E-08,-4.88944352E-09,-0.997396946
 	mir = 1,1,1
@@ -11511,10 +10823,10 @@ PART
 	{
 		name = LaunchClamp
 		isEnabled = True
-		scaleFactor = 0.92798084
-		height = 2.34147835
+		scaleFactor = 0.927980423
+		height = 2.34147739
 		stagingEnabled = True
-		towerRot = 0.0563085489,-0.704861104,0.0563085154,-0.704861343
+		towerRot = 0.0563085601,-0.704861104,0.0563085265,-0.704861343
 		EVENTS
 		{
 		}
@@ -12571,7 +11883,7 @@ PART
 	part = EquiTriangle0_4293590234
 	partName = Part
 	persistentId = 3051304218
-	pos = 0.380592287,15.2006464,-0.232197344
+	pos = 0.380592525,15.2006464,-0.232197434
 	attPos = -0.369819969,-0.0481967926,0.391219437
 	attPos0 = -0.24952434,-0.359922409,-0.24952434
 	rot = 0.307661533,0.636666656,0.307661355,-0.636666894
@@ -12713,10 +12025,10 @@ PART
 	part = EquiTriangle0_4293590190
 	partName = Part
 	persistentId = 2458857050
-	pos = -0.00388820004,15.2006464,-0.616677165
+	pos = -0.00388808083,15.2006464,-0.616677284
 	attPos = -0.369819969,-0.0481967926,0.391219437
 	attPos0 = -0.24952434,-0.359922409,0.24952431
-	rot = 0.435099036,-1.78813934E-07,-8.94069672E-08,-0.900382757
+	rot = 0.435099006,-1.78813934E-07,-8.94069672E-08,-0.900382698
 	attRot = -0.618853688,-2.05161688E-09,-7.96278066E-09,0.785506368
 	attRot0 = 0.205948532,-0.77867949,-0.497203887,-0.322539568
 	mir = 1,1,1
@@ -12855,7 +12167,7 @@ PART
 	part = EquiTriangle0_4293590146
 	partName = Part
 	persistentId = 3892272180
-	pos = -0.38836956,15.2006464,-0.232196331
+	pos = -0.388369769,15.2006464,-0.232196242
 	attPos = -0.369819969,-0.0481967926,0.391219437
 	attPos0 = 0.249524355,-0.359922409,0.249524325
 	rot = 0.307661325,-0.636666954,-0.307661504,-0.636666596
@@ -12997,10 +12309,10 @@ PART
 	part = EquiTriangle0_4293590102
 	partName = Part
 	persistentId = 632790465
-	pos = -0.00388881098,15.2006464,0.152283385
+	pos = -0.00388888549,15.2006464,0.152283415
 	attPos = -0.369819969,-0.0481967926,0.391219437
 	attPos0 = 0.24952431,-0.359922409,-0.24952434
-	rot = -8.94069672E-08,-0.900382757,-0.435099036,1.78813934E-07
+	rot = -8.94069672E-08,-0.900382698,-0.435099006,1.78813934E-07
 	attRot = -0.618853688,-2.05161688E-09,-7.96278066E-09,0.785506368
 	attRot0 = -0.497203887,-0.322539568,-0.205948532,0.77867949
 	mir = 1,1,1
@@ -13139,7 +12451,7 @@ PART
 	part = Triangle0_4293590058
 	partName = Part
 	persistentId = 3279547331
-	pos = 0.285160482,14.9206285,-0.52410382
+	pos = 0.28516075,14.9206285,-0.524104059
 	attPos = 0.135329723,-0.245451689,0.0865667462
 	attPos0 = -0.427235782,-0.00331684877,-0.246664733
 	rot = -0.699828148,-0.50639528,-0.00212109089,0.503785849
@@ -13284,10 +12596,10 @@ PART
 	part = Triangle0_4293590026
 	partName = Part
 	persistentId = 1981255746
-	pos = -0.295796126,14.9206285,-0.521245062
+	pos = -0.295796305,14.9206285,-0.521245062
 	attPos = 0.135329574,-0.245451808,0.0865667462
 	attPos0 = -0.427235723,-0.00331681967,-0.246664762
-	rot = -0.496353328,-0.00184512138,0.493353546,0.714305699
+	rot = -0.496353358,-0.00184512138,0.493353486,0.714305639
 	attRot = -0.0167147499,0.0134061193,0.463524222,0.885825217
 	attRot0 = 1.2665987E-07,0.258818924,-1.49011612E-08,-0.965925932
 	mir = 1,1,1
@@ -13429,10 +12741,10 @@ PART
 	part = Triangle0_4293589994
 	partName = Part
 	persistentId = 530034491
-	pos = -0.292937726,14.9206285,0.0597104281
+	pos = -0.292937994,14.9206285,0.0597107857
 	attPos = 0.135329753,-0.245451823,0.0865668356
 	attPos0 = -0.427235991,-0.0033167142,-0.246664718
-	rot = -0.00212098658,0.503785789,0.699828267,0.506395042
+	rot = -0.00212098658,0.503785849,0.699828267,0.506395102
 	attRot = -0.0167147499,0.0134061193,0.463524222,0.885825217
 	attRot0 = 1.45286322E-07,0.258818924,-1.49011612E-08,-0.965925932
 	mir = 1,1,1
@@ -13574,10 +12886,10 @@ PART
 	part = Triangle0_4293589962
 	partName = Part
 	persistentId = 3271672287
-	pos = 0.288018137,14.9206285,0.0568515211
+	pos = 0.288018197,14.9206285,0.0568514913
 	attPos = 0.135329664,-0.245451748,0.0865667313
 	attPos0 = -0.427235752,-0.00331687927,-0.246664718
-	rot = 0.493353486,0.714305699,0.496353209,0.00184494257
+	rot = 0.493353486,0.714305699,0.496353209,0.00184491277
 	attRot = -0.0167147499,0.0134061193,0.463524222,0.885825217
 	attRot0 = 1.19209275E-07,0.258818895,0,-0.965925872
 	mir = 1,1,1
@@ -14261,6 +13573,277 @@ PART
 		isEnabled = True
 		stagingEnabled = True
 		animStates = 0
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCargoPart
+		isEnabled = True
+		beingAttached = False
+		beingSettled = False
+		reinitResourcesOnStoreInVessel = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = KOSNameTag
+		isEnabled = True
+		nameTag = 
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = flagPartSize1_4292772528
+	partName = Part
+	persistentId = 1055923186
+	pos = -0.835274458,13.0125666,-0.71219784
+	attPos = 0,0,0
+	attPos0 = -0.831385911,1.2687645,-0.480000973
+	rot = -5.32295168E-08,-0.49999997,3.07320747E-08,-0.866025448
+	attRot = 0,0,0,1
+	attRot0 = -5.32295168E-08,-0.49999997,3.07320747E-08,-0.866025448
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 4
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	srfN = srfAttach,Size1p5.Tank.04_4293594284,COL,0|0|0.0252500009,0|0|-1.00999999,0|0|0.0252500009
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = FlagDecalBackground
+		isEnabled = True
+		currentflagUrl = Squad/Flags/rings
+		displayingPortrait = True
+		flagSize = 0
+		placementID = 0
+		flagDisplayed = True
+		isMirrored = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		MESH
+		{
+			name = small
+			displayName = Маленький
+			meshName = 1.25SmallPortrait
+			orientation = PORTRAIT
+			mass = 7.9999998E-05
+			cost = 2.5
+			variantNames = White,Dark,Orange,TransparentBackground
+			indexOffset = 0
+		}
+		MESH
+		{
+			name = small
+			displayName = Маленький
+			meshName = 1.25SmallLandscape
+			orientation = LANDSCAPE
+			mass = 0
+			cost = 0
+			variantNames = White,Dark,Orange,TransparentBackground
+			indexOffset = 0
+		}
+		MESH
+		{
+			name = small
+			displayName = Малая панель
+			meshName = 1.25SmallPortraitPanel
+			orientation = PORTRAIT
+			mass = 0.00124999997
+			cost = 10
+			variantNames = WhitePanel,DarkPanel,OrangePanel
+			indexOffset = 1000
+		}
+		MESH
+		{
+			name = small
+			displayName = Малая панель
+			meshName = 1.25SmallLandscapePanel
+			orientation = LANDSCAPE
+			mass = 0.000449999992
+			cost = 5
+			variantNames = WhitePanel,DarkPanel,OrangePanel
+			indexOffset = 1000
+		}
+		MESH
+		{
+			name = medium
+			displayName = Средний
+			meshName = 1.25MediumPortrait
+			orientation = PORTRAIT
+			mass = 0.000469999999
+			cost = 10
+			variantNames = White,Dark,Orange,TransparentBackground
+			indexOffset = 0
+		}
+		MESH
+		{
+			name = medium
+			displayName = Средний
+			meshName = 1.25MediumLandscape
+			orientation = LANDSCAPE
+			mass = 0.000150000007
+			cost = 5
+			variantNames = White,Dark,Orange,TransparentBackground
+			indexOffset = 0
+		}
+		MESH
+		{
+			name = medium
+			displayName = Средняя панель
+			meshName = 1.25MediumPortraitPanel
+			orientation = PORTRAIT
+			mass = 0.0051500001
+			cost = 25
+			variantNames = WhitePanel,DarkPanel,OrangePanel
+			indexOffset = 1000
+		}
+		MESH
+		{
+			name = medium
+			displayName = Средняя панель
+			meshName = 1.25MediumLandscapePanel
+			orientation = LANDSCAPE
+			mass = 0.00194999995
+			cost = 15
+			variantNames = WhitePanel,DarkPanel,OrangePanel
+			indexOffset = 1000
+		}
+		MESH
+		{
+			name = large
+			displayName = Большой
+			meshName = 1.25LargePortrait
+			orientation = PORTRAIT
+			mass = 0.00203000009
+			cost = 25
+			variantNames = White,Dark,Orange,TransparentBackground
+			indexOffset = 0
+		}
+		MESH
+		{
+			name = large
+			displayName = Большой
+			meshName = 1.25LargeLandscape
+			orientation = LANDSCAPE
+			mass = 0.000750000007
+			cost = 15
+			variantNames = White,Dark,Orange,TransparentBackground
+			indexOffset = 0
+		}
+		MESH
+		{
+			name = large
+			displayName = Большая панель
+			meshName = 1.25LargePortraitPanel
+			orientation = PORTRAIT
+			mass = 0.0207499992
+			cost = 55
+			variantNames = WhitePanel,DarkPanel,OrangePanel
+			indexOffset = 1000
+		}
+		MESH
+		{
+			name = large
+			displayName = Большая панель
+			meshName = 1.25LargeLandscapePanel
+			orientation = LANDSCAPE
+			mass = 0.00795000046
+			cost = 35
+			variantNames = WhitePanel,DarkPanel,OrangePanel
+			indexOffset = 1000
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartVariants
+		isEnabled = True
+		useVariantMass = True
+		stagingEnabled = True
 		EVENTS
 		{
 		}
