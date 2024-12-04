@@ -1,12 +1,13 @@
 from time import sleep
 
+import krpc
 import krpc.services.spacecenter
 
 from .data_source import DataSource
 
 
 class Vessel(DataSource):
-    connection: krpc.services.spacecenter.Client
+    connection: krpc.Client
     vessel: krpc.services.spacecenter.Vessel
     body: krpc.services.spacecenter.CelestialBody
 
