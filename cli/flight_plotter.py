@@ -5,7 +5,10 @@ from varkt.vessel import Vessel
 
 if __name__ == '__main__':
     vessel = Vessel('Sputnik-1')
-    config = Config(1, 1)
+    config = Config(1,
+                    1,
+                    "program.json")
 
-    collector = Collector(vessel, config)
+    collector = Collector(vessel,
+                          config)
     collector.collect()
