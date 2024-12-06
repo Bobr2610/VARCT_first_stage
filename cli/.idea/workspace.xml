@@ -20,7 +20,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager" selected="Python.model_plotter">
+  <component name="RunManager" selected="Python.flight">
     <configuration name="flight" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="cli" />
       <option name="INTERPRETER_OPTIONS" value="" />
