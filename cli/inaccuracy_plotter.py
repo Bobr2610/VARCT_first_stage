@@ -2,7 +2,7 @@ import json
 
 from varkt.collector import Collector
 from varkt.config import Config
-from varkt.inaccuracy import Ina    ccuracy
+from varkt.inaccuracy import Inaccuracy
 
 if __name__ == '__main__':
     with open('flight.json') as file:
