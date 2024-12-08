@@ -4,7 +4,7 @@ import krpc
 
 time.sleep(15)
 turn_start_altitude = 250
-turn_end_altitude = 45000
+turn_end_altitude = 60000
 target_altitude = 215000
 
 conn = krpc.connect(name='Sputnik-1')
