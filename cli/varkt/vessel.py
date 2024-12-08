@@ -10,21 +10,30 @@ class Vessel(DataSource):
     connection: krpc.Client
     vessel: krpc.services.spacecenter.Vessel
     body: krpc.services.spacecenter.CelestialBody
+    plotting_time: int
 
     def __init__(self,
-                 name: str):
+                 name: str,
+                 plotting_time: int):
         self.connection = krpc.connect(name=name)
         self.vessel = self.connection.space_center.active_vessel
         self.body = self.vessel.orbit.body
+        self.plotting_time = plotting_time
 
     def data(self,
              time: int):
-        height = self.vessel.flight(self.body.orbital_reference_frame).mean_altitude
-        speed = self.vessel.flight(self.body.orbital_reference_frame).speed
-        angle = self.vessel.flight(self.body.orbital_reference_frame).roll
-        mass = self.vessel.mass
+        height = self.vessel.flight().mean_altitude
+        speed = self.vessel.flight().speed
+        angle = self.vessel.flight(self.vessel.surface_reference_frame).pitch
 
-        return height, speed, angle, mass
+        fuel = 0
+        for stage in range(self.vessel.control.current_stage + 1):
+            for part in self.vessel.parts.in_decouple_stage(stage):
+                for resource in part.resources.all:
+                    if resource.name == 'LiquidFuel':
+                        fuel += resource.amount
+
+        return height, speed, angle, fuel
 
     def pause(self,
               interval: int):
@@ -32,4 +41,4 @@ class Vessel(DataSource):
 
     def is_end(self,
                time: int) -> bool:
-        return False
+        return time >= self.plotting_time

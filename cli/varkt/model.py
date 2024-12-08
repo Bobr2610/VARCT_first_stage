@@ -32,6 +32,12 @@ class Model(DataSource):
     n = 2
     k = 0.9
 
+    plotting_time: int
+
+    def __init__(self,
+                 plotting_time: int):
+        self.plotting_time = plotting_time
+
     def height(self,
                time: int):
         return scipy.integrate.quad(lambda t: np.cos((t < self.t_p_1) * 0 +
@@ -72,13 +78,27 @@ class Model(DataSource):
                     np.pi - (np.pi / 2) * ((time - self.t_p_1) / (self.t_p_2 - self.t_p_1))) +
                 (time > self.t_p_2) * (np.pi / 2 + self.phi))
 
-    def mass(self,
+    prev_mass = m_0_1 + m_0_2
+    prev_time = 0
+    def fuel(self,
              time: int):
-        return 0
+        m_v = 0
+        if time <= self.t_1:
+            m_v += self.m_1
+        if time <= self.t_2:
+            m_v += self.m_2
+
+        self.prev_mass -= (time - self.prev_time) * m_v
+        self.prev_time = time
+        return self.prev_mass
 
     def data(self,
              time: int) -> (float, float, float, float):
-        return self.height(time), self.speed(time), self.angle(time), self.mass(time)
+        n_angle = ((time < self.t_p_1) * 0 +
+                   (self.t_p_1 <= time <= self.t_p_2) * (np.pi / 2) * ((time - self.t_p_1) / (self.t_p_2 - self.t_p_1)) +
+                   (time > self.t_p_2) * (np.pi / 2))
+
+        return self.height(time), self.speed(time), 90 - n_angle, self.fuel(time)
 
     def pause(self,
               interval: float):
@@ -86,4 +106,4 @@ class Model(DataSource):
 
     def is_end(self,
                time: int) -> bool:
-        return time >= self.t_0
+        return time >= self.plotting_time

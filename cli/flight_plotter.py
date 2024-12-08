@@ -4,10 +4,11 @@ from varkt.vessel import Vessel
 
 
 if __name__ == '__main__':
-    vessel = Vessel('Sputnik-1')
+    vessel = Vessel('Sputnik-1',
+                    400)
     config = Config(1,
                     1,
-                    "program.json")
+                    "flight.json")
 
     collector = Collector(vessel,
                           config)
