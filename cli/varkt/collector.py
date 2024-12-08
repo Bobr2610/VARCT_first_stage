@@ -2,7 +2,7 @@ import json
 
 from .config import Config
 from .data_source import DataSource
-from .plotting import Plotter
+from .plotting import (Plotter)
 from .timer import Timer
 
 

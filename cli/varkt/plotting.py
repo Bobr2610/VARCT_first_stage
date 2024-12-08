@@ -35,7 +35,7 @@ class Plotter:
     height_graphic: Graphic
     speed_graphic: Graphic
     angle_graphic: Graphic
-    mass_graphic: Graphic
+    fuel_graphic: Graphic
 
     def __init__(self):
         plt.ion()
@@ -49,23 +49,23 @@ class Plotter:
                                      'speed')
         self.angle_graphic = Graphic(ax[1, 0],
                                      'angle')
-        self.mass_graphic = Graphic(ax[1, 1],
-                                    'mass')
+        self.fuel_graphic = Graphic(ax[1, 1],
+                                    'fuel')
 
     def update(self,
                time: int,
                height: int,
                speed: int,
                angle: int,
-               mass: int):
+               fuel: int):
         self.height_graphic.update(time,
                                    height)
         self.speed_graphic.update(time,
                                   speed)
         self.angle_graphic.update(time,
                                   angle)
-        self.mass_graphic.update(time,
-                                 mass)
+        self.fuel_graphic.update(time,
+                                 fuel)
 
     def pause(self, interval: float):
         plt.pause(interval)
