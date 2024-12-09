@@ -69,3 +69,7 @@ class Plotter:
 
     def pause(self, interval: float):
         plt.pause(interval)
+
+    def save(self,
+             name: str):
+        plt.savefig(name)

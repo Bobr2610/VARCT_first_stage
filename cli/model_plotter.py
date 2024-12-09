@@ -7,7 +7,7 @@ if __name__ == '__main__':
     model = Model(400)
     config = Config(5,
                     0.1,
-                    "model.json")
+                    'model')
 
     collector = Collector(model,
                           config)

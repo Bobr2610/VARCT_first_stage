@@ -39,5 +39,7 @@ class Collector:
 
             self.data_source.pause(self.config.pause_interval)
 
-        with open(self.config.file, 'w') as file:
+        with open(self.config.plotter_name + '.json', 'w') as file:
             json.dump(data, file)
+
+        plotter.save(self.config.plotter_name + '.png')

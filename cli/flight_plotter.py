@@ -8,7 +8,7 @@ if __name__ == '__main__':
                     400)
     config = Config(1,
                     1,
-                    "flight.json")
+                    'flight')
 
     collector = Collector(vessel,
                           config)

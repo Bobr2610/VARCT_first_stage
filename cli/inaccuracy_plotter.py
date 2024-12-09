@@ -16,7 +16,7 @@ if __name__ == '__main__':
                             400)
     config = Config(5,
                     0.1,
-                    "inaccuracy.json")
+                    'inaccuracy')
 
     collector = Collector(inaccuracy, config)
     collector.collect()
