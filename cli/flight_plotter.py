@@ -1,14 +1,17 @@
+import sys
+
 from varkt.collector import Collector
 from varkt.config import Config
 from varkt.vessel import Vessel
 
 
 if __name__ == '__main__':
-    vessel = Vessel('Sputnik-1',
-                    400)
-    config = Config(1,
-                    1,
-                    'flight')
+    if len(sys.argv) < 2:
+        print('Нет имени файла конфигурации!')
+
+    config = Config.from_file(sys.argv[1])
+
+    vessel = Vessel(config)
 
     collector = Collector(vessel,
                           config)

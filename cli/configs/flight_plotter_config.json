@@ -1,0 +1,8 @@
+{
+  "host": "Sputnik-1",
+
+  "plotter_name": "flight",
+  "plotting_time": 400,
+  "update_interval": 1,
+  "pause_interval": 1
+}

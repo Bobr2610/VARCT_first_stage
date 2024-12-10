@@ -1,21 +1,16 @@
+import json
+
+
 class Config:
-    update_interval: float
-    pause_interval: float
-    plotter_name: str
-
     def __init__(self,
-                 update_interval: float,
-                 pause_interval: float,
-                 plotter_name: str):
-        self.update_interval = update_interval
-        self.pause_interval = pause_interval
-        self.plotter_name = plotter_name
+                 data):
+        self.data = data
 
-    def update_interval(self) -> float:
-        return self.update_interval
+    @staticmethod
+    def from_file(name: str):
+        with open(name) as file:
+            data = json.load(file)
 
-    def pause_interval(self) -> float:
-        return self.pause_interval
+        config = Config(data)
 
-    def plotter_name(self) -> str:
-        return self.plotter_name
+        return config

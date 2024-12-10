@@ -1,14 +1,19 @@
+from .config import Config
+
+
 class Timer:
+    config: Config
+
     time: int
-    interval: float
 
     def __init__(self,
-                 interval: float):
+                 config: Config):
+        self.config = config
+
         self.time = 0
-        self.interval = interval
 
     def update(self):
-        self.time += self.interval
+        self.time += self.config.data['update_interval']
 
     def time(self):
         return self.time

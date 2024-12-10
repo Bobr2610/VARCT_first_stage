@@ -2,7 +2,7 @@ import json
 
 from .config import Config
 from .data_source import DataSource
-from .plotting import (Plotter)
+from .plotting import Plotter
 from .timer import Timer
 
 
@@ -20,7 +20,7 @@ class Collector:
         data = {}
 
         plotter = Plotter()
-        timer = Timer(self.config.update_interval)
+        timer = Timer(self.config)
 
         while not self.data_source.is_end(timer.time):
             record = self.data_source.data(timer.time)
@@ -29,17 +29,18 @@ class Collector:
                 'height': record[0],
                 'speed': record[1],
                 'angle': record[2],
-                'mass': record[3]
+                'fuel': record[3]
             }
 
             plotter.update(timer.time, *record)
-            plotter.pause(self.config.pause_interval)
+            plotter.pause(self.config.data['pause_interval'])
 
             timer.update()
 
-            self.data_source.pause(self.config.pause_interval)
+            self.data_source.pause(self.config.data['pause_interval'])
 
-        with open(self.config.plotter_name + '.json', 'w') as file:
-            json.dump(data, file)
+        with open(self.config.data['plotter_name'] + '.json', 'w') as file:
+            json.dump(data,
+                      file)
 
-        plotter.save(self.config.plotter_name + '.png')
+        plotter.save(self.config.data['plotter_name'] + '.png')

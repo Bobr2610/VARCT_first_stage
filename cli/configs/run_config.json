@@ -1,0 +1,7 @@
+{
+  "flight_plotter_config": "configs/flight_plotter_config.json",
+  "model_plotter_config": "configs/model_plotter_config.json",
+  "inaccuracy_plotter_config": "configs/inaccuracy_plotter_config.json",
+
+  "plotting_time": 400
+}

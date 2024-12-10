@@ -3,22 +3,24 @@ from time import sleep
 import krpc
 import krpc.services.spacecenter
 
+from .config import Config
 from .data_source import DataSource
 
 
 class Vessel(DataSource):
+    config: Config
+
     connection: krpc.Client
     vessel: krpc.services.spacecenter.Vessel
     body: krpc.services.spacecenter.CelestialBody
-    plotting_time: int
 
     def __init__(self,
-                 name: str,
-                 plotting_time: int):
-        self.connection = krpc.connect(name=name)
+                 config: Config):
+        self.config = config
+
+        self.connection = krpc.connect(name=self.config.data['host'])
         self.vessel = self.connection.space_center.active_vessel
         self.body = self.vessel.orbit.body
-        self.plotting_time = plotting_time
 
     def data(self,
              time: int):
@@ -41,4 +43,4 @@ class Vessel(DataSource):
 
     def is_end(self,
                time: int) -> bool:
-        return time >= self.plotting_time
+        return time >= self.config.data['plotting_time']

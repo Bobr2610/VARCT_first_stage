@@ -1,10 +1,13 @@
 import numpy as np
 import scipy
 
+from .config import Config
 from .data_source import DataSource
 
 
 class Model(DataSource):
+    config: Config
+
     # m_start = 267_000
     m_0 = 500
     m_0_1 = 172_000
@@ -35,8 +38,8 @@ class Model(DataSource):
     plotting_time: int
 
     def __init__(self,
-                 plotting_time: int):
-        self.plotting_time = plotting_time
+                 config: Config):
+        self.config = config
 
     def height(self,
                time: int):
@@ -106,4 +109,4 @@ class Model(DataSource):
 
     def is_end(self,
                time: int) -> bool:
-        return time >= self.plotting_time
+        return time >= self.config.data['plotting_time']

@@ -67,7 +67,8 @@ class Plotter:
         self.fuel_graphic.update(time,
                                  fuel)
 
-    def pause(self, interval: float):
+    def pause(self,
+              interval: float):
         plt.pause(interval)
 
     def save(self,
