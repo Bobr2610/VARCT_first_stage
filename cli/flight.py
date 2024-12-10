@@ -51,11 +51,10 @@ while True:
             vessel.auto_pilot.target_pitch_and_heading(90 - turn_angle, 90)
 
     # Separate SRBs when finished
-    if not srbs_separated:
-        if srb_fuel() < 0.1:
-            vessel.control.activate_next_stage()
-            srbs_separated = True
-            print('SRBs separated')
+    if not srbs_separated and srb_fuel() < 0.1:
+        vessel.control.activate_next_stage()
+        srbs_separated = True
+        print('SRBs separated')
 
     # Decrease throttle when approaching target apoapsis
     if apoapsis() > target_altitude * 0.9:
