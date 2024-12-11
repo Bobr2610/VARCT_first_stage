@@ -97,7 +97,7 @@ burn_time = (m0 - m1) / flow_rate
 print('Orientating ship for circularization burn')
 vessel.auto_pilot.reference_frame = node.reference_frame
 vessel.auto_pilot.target_direction = (0, 1, 0)
-vessel.auto_pilot.wait()
+'''vessel.auto_pilot.wait()'''
 
 # Wait until burn
 print('Waiting until circularization burn')
