@@ -1,29 +1,69 @@
+import json
+
 from .config import Config
-from .data_source import DataSource
+from .plotting import Plotter
 
 
-class Inaccuracy(DataSource):
+class Inaccuracy:
     config: Config
+    times: [int]
+    flight_data: ([int], [int], [int], [int])
+    model_data: ([int], [int], [int], [int])
 
     def __init__(self,
-                 flight_data,
-                 model_data,
-                 config: Config):
+                 config: Config,
+                 times: [int],
+                 flight_data: ([int], [int], [int], [int]),
+                 model_data: ([int], [int], [int], [int])):
         self.config = config
-
+        self.times = times
         self.flight_data = flight_data
         self.model_data = model_data
 
-    def data(self,
-             time: int) -> (float, float, float, float):
-        flight_time = self.flight_data[str(time)]
-        model_time = self.model_data[str(time)]
+    def draw(self):
+        inaccuracies = {'height': [],
+                        'speed': [],
+                        'angle': [],
+                        'mass': []}
+        for i in range(len(self.flight_data['height'])):
+            height_inaccuracy = self.inaccuracy(self.flight_data['height'][i],
+                                                self.model_data['height'][i])
+            speed_inaccuracy = self.inaccuracy(self.flight_data['speed'][i],
+                                               self.model_data['speed'][i])
+            angle_inaccuracy = self.inaccuracy(self.flight_data['angle'][i],
+                                               self.model_data['angle'][i])
+            mass_inaccuracy = self.inaccuracy(self.flight_data['mass'][i],
+                                              self.model_data['mass'][i])
 
-        result = []
-        for data_type in ['height', 'speed', 'angle', 'fuel']:
-            result.append(self.inaccuracy(flight_time[data_type], model_time[data_type]))
+            inaccuracies['height'].append(height_inaccuracy)
+            inaccuracies['speed'].append(speed_inaccuracy)
+            inaccuracies['angle'].append(angle_inaccuracy)
+            inaccuracies['mass'].append(mass_inaccuracy)
 
-        return tuple(result)
+        plotter = Plotter()
+        plotter.draw_once(self.times,
+                          (
+                              inaccuracies['height'],
+                              inaccuracies['speed'],
+                              inaccuracies['angle'],
+                              inaccuracies['mass']
+                          ),
+                          'g')
+        plotter.pause(5)
+        plotter.save('inaccuracy.png')
+
+        data = {}
+        for i, time in enumerate(self.times):
+            data[time] = {
+                'height': inaccuracies['height'][i],
+                'speed': inaccuracies['speed'][i],
+                'angle': inaccuracies['angle'][i],
+                'mass': inaccuracies['mass'][i]
+            }
+
+        with open('inaccuracy.json', 'w') as file:
+            json.dump(data,
+                      file)
 
     def inaccuracy(self,
                    first: float,
@@ -32,13 +72,3 @@ class Inaccuracy(DataSource):
             second = 0.001
 
         return first / second
-
-    def pause(self,
-              interval: float):
-        return
-
-    def is_end(self,
-               time: int) -> bool:
-        return time >= self.config.data['plotting_time']
-
-

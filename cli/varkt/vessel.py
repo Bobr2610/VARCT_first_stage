@@ -27,15 +27,9 @@ class Vessel(DataSource):
         height = self.vessel.flight(self.body.orbital_reference_frame).mean_altitude
         speed = self.vessel.flight(self.body.orbital_reference_frame).speed
         angle = self.vessel.flight(self.vessel.surface_reference_frame).pitch
+        mass = self.vessel.mass
 
-        fuel = 0
-        for stage in range(self.vessel.control.current_stage + 1):
-            for part in self.vessel.parts.in_decouple_stage(stage):
-                for resource in part.resources.all:
-                    if resource.name == 'SolidFuel' or resource.name == 'LiquidFuel':
-                        fuel += resource.amount
-
-        return height, speed, angle, fuel
+        return height, speed, angle, mass
 
     def pause(self,
               interval: int):

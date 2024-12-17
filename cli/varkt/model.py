@@ -8,7 +8,7 @@ from .data_source import DataSource
 class Model(DataSource):
     config: Config
 
-    # m_start = 267_000
+    m_start = 267_000
     m_0 = 500
     m_0_1 = 172_000
     m_0_2 = 94_000
@@ -18,20 +18,20 @@ class Model(DataSource):
     i_1_v = 308
     i_2_e = 243
     i_2_v = 309
-    # f_t_1_e = 3_216
-    # f_t_1_v = 3_924
-    # f_t_2_e = 735.5
-    # f_t_2_v = 921
-    # g = 9.81
+    f_t_1_e = 3_216
+    f_t_1_v = 3_924
+    f_t_2_e = 735.5
+    f_t_2_v = 921
     t_0 = 315
     t_p_1 = 16
     t_p_2 = 113
-    t_1 = 122
+    t_1 = 120
     t_2 = 280
-    # t_full = 280
+    t_full = 280
     m_1 = 1300
     m_2 = 308.5
     phi = np.pi / 180
+
     n = 2
     k = 0.9
 
@@ -81,19 +81,13 @@ class Model(DataSource):
                     np.pi - (np.pi / 2) * ((time - self.t_p_1) / (self.t_p_2 - self.t_p_1))) +
                 (time > self.t_p_2) * (np.pi / 2 + self.phi))
 
-    prev_mass = m_0_1 + m_0_2
-    prev_time = 0
-    def fuel(self,
+    def mass(self,
              time: int):
-        m_v = 0
-        if time <= self.t_1:
-            m_v += self.m_1
-        if time <= self.t_2:
-            m_v += self.m_2
-
-        self.prev_mass -= (time - self.prev_time) * m_v
-        self.prev_time = time
-        return self.prev_mass
+        return (self.m_start -
+                (time < self.t_1) * self.m_1 * time -
+                (time < self.t_2) * self.m_2 * time -
+                (time > self.t_1) * self.m_0_1 -
+                (time > self.t_2) * (self.m_0_2 - self.m_1_2))
 
     def data(self,
              time: int) -> (float, float, float, float):
@@ -101,7 +95,7 @@ class Model(DataSource):
                    (self.t_p_1 <= time <= self.t_p_2) * (np.pi / 2) * ((time - self.t_p_1) / (self.t_p_2 - self.t_p_1)) +
                    (time > self.t_p_2) * (np.pi / 2))
 
-        return self.height(time), self.speed(time), 90 - n_angle, self.fuel(time)
+        return self.height(time), self.speed(time), 90 - n_angle, self.mass(time)
 
     def pause(self,
               interval: float):

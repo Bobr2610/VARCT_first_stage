@@ -37,8 +37,6 @@ class Collector:
 
             timer.update()
 
-            self.data_source.pause(self.config.data['pause_interval'])
-
         with open(self.config.data['plotter_name'] + '.json', 'w') as file:
             json.dump(data,
                       file)
