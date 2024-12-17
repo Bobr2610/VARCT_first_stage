@@ -101,9 +101,10 @@ vessel.auto_pilot.target_direction = (0, 1, 0)
 
 # Wait until burn
 print('Waiting until circularization burn')
-burn_ut = ut() + vessel.orbit.time_to_apoapsis - (burn_time / 2.)
+# Это часть в коментариях ускоряет время до аппогея
+"""burn_ut = ut() + vessel.orbit.time_to_apoapsis - (burn_time / 2.)
 lead_time = 5
-conn.space_center.warp_to(burn_ut - lead_time)
+conn.space_center.warp_to(burn_ut - lead_time)"""
 
 # Execute burn
 print('Ready to execute burn')
