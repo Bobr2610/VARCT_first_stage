@@ -40,7 +40,7 @@ class Inaccuracy:
             inaccuracies['angle'].append(angle_inaccuracy)
             inaccuracies['mass'].append(mass_inaccuracy)
 
-        plotter = Plotter()
+        plotter = Plotter(False)
         plotter.draw_once(self.times,
                           (
                               inaccuracies['height'],
@@ -48,7 +48,8 @@ class Inaccuracy:
                               inaccuracies['angle'],
                               inaccuracies['mass']
                           ),
-                          'g')
+                          'g',
+                          'Погрешность')
         plotter.pause(5)
         plotter.save('inaccuracy.png')
 

@@ -13,30 +13,41 @@ class Graphic:
 
     def __init__(self,
                  axes: Axes,
-                 title: str):
+                 title: str,
+                 x_label: str,
+                 y_label: str):
         self.x = []
         self.y = []
         self.axes = axes
-        self.axes.set_title(title)
         self.graphic = self.axes.plot(self.x,
                                       self.y)[0]
+        self.graphic.figure.set_figheight(4)
+        self.graphic.figure.set_figwidth(4)
+        self.axes.set_xlabel(x_label, fontsize=11)
+        self.axes.set_ylabel(y_label, fontsize=11)
 
     def update(self,
                x_element: int,
-               y_element: int):
+               y_element: int,
+               label: str):
         self.x.append(x_element)
         self.y.append(y_element)
         self.graphic.remove()
         self.graphic = self.axes.plot(self.x,
-                                      self.y)[0]
+                                      self.y,
+                                      label=label)[0]
+        self.axes.legend()
 
     def draw(self,
              x_elements: [int],
              y_elements: [int],
-             color: str):
+             color: str,
+             label: str):
         self.axes.plot(x_elements,
                        y_elements,
-                       color)
+                       color,
+                       label=label)
+        self.axes.legend()
 
 
 class Plotter:
@@ -45,44 +56,58 @@ class Plotter:
     angle_graphic: Graphic
     mass_graphic: Graphic
 
-    def __init__(self):
+    def __init__(self, is_si = True):
         plt.ion()
 
         _, ax = plt.subplots(nrows=2,
                              ncols=2)
 
         self.height_graphic = Graphic(ax[0, 0],
-                                      'height')
+                                      'Высота',
+                                      'Время (с)',
+                                      'Высота (км)' if is_si else 'Отношение')
         self.speed_graphic = Graphic(ax[0, 1],
-                                     'speed')
+                                     'Скорость',
+                                     'Время (с)',
+                                     'Скорость (м/с)' if is_si else 'Отношение')
         self.angle_graphic = Graphic(ax[1, 0],
-                                     'angle')
+                                     'Угол',
+                                     'Время (с)',
+                                     'Угол (градусы)' if is_si else 'Отношение')
         self.mass_graphic = Graphic(ax[1, 1],
-                                    'mass')
+                                    'Масса',
+                                    'Время (с)',
+                                    'Масса (кг)' if is_si else 'Отношение')
 
     def update(self,
                time: int,
                height: int,
                speed: int,
                angle: int,
-               mass: int):
+               mass: int,
+               label: str):
         self.height_graphic.update(time,
-                                   height)
+                                   height,
+                                   label)
         self.speed_graphic.update(time,
-                                  speed)
+                                  speed,
+                                  label)
         self.angle_graphic.update(time,
-                                  angle)
+                                  angle,
+                                  label)
         self.mass_graphic.update(time,
-                                 mass)
+                                 mass,
+                                 label)
 
     def draw_once(self,
                   times: [int],
                   data: ([int], [int], [int], [int]),
-                  color: str):
-        self.height_graphic.draw(times, data[0], color)
-        self.speed_graphic.draw(times, data[1], color)
-        self.angle_graphic.draw(times, data[2], color)
-        self.mass_graphic.draw(times, data[3], color)
+                  color: str,
+                  label: str):
+        self.height_graphic.draw(times, data[0], color, label)
+        self.speed_graphic.draw(times, data[1], color, label)
+        self.angle_graphic.draw(times, data[2], color, label)
+        self.mass_graphic.draw(times, data[3], color, label)
 
 
     def pause(self,

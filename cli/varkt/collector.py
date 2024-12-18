@@ -4,6 +4,7 @@ from .config import Config
 from .data_source import DataSource
 from .plotting import Plotter
 from .timer import Timer
+from .vessel import Vessel
 
 
 class Collector:
@@ -29,10 +30,10 @@ class Collector:
                 'height': record[0],
                 'speed': record[1],
                 'angle': record[2],
-                'fuel': record[3]
+                'mass': record[3]
             }
 
-            plotter.update(timer.time, *record)
+            plotter.update(timer.time, *record, 'Полёт' if self.data_source is Vessel else 'Модель')
             plotter.pause(self.config.data['pause_interval'])
 
             timer.update()

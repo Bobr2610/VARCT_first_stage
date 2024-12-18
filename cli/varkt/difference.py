@@ -26,7 +26,8 @@ class Difference:
                               self.flight_data['angle'],
                               self.flight_data['mass']
                           ),
-                          'g')
+                          'g',
+                          'Полёт')
         plotter.draw_once(self.times,
                           (
                               self.model_data['height'],
@@ -34,6 +35,7 @@ class Difference:
                               self.model_data['angle'],
                               self.model_data['mass']
                           ),
-                          'b')
+                          'b',
+                          'Модель')
         plotter.pause(5)
         plotter.save('difference.png')

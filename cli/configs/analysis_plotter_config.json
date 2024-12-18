@@ -1,6 +1,6 @@
 {
-  "flight_data_file": "flight.json",
-  "model_data_file": "model.json",
+  "flight_data_file": "data/flight.json",
+  "model_data_file": "data/model.json",
 
   "plotter_name": "inaccuracy",
   "plotting_time": 420,
