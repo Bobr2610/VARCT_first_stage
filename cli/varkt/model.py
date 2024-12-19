@@ -85,9 +85,9 @@ class Model(DataSource):
              time: int):
         return (self.m_start -
                 (time < self.t_1) * self.m_1 * time -
-                (time < self.t_2) * self.m_2 * time -
-                (time > self.t_1) * self.m_0_1 -
-                (time > self.t_2) * (self.m_0_2 - self.m_1_2))
+                (self.t_1 <= time < self.t_2) * self.m_2 * time -
+                (time >= self.t_1) * self.m_0_1 -
+                (time >= self.t_2) * (self.m_0_2 - self.m_1_2))
 
     def data(self,
              time: int) -> (float, float, float, float):
