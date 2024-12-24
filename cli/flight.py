@@ -11,7 +11,7 @@ def autopilot(config: Config):
     turn_end_altitude = 60000
     target_altitude = 215000
 
-    conn = krpc.connect(name=config.data['host'])
+    conn = krpc.connect(config.data['host'])
     vessel = conn.space_center.active_vessel
 
     # Set up streams for telemetry
@@ -46,7 +46,7 @@ def autopilot(config: Config):
     while True:
 
         # Gravity turn
-        if turn_start_altitude < altitude() < turn_end_altitude:
+        if altitude() > turn_start_altitude and altitude() < turn_end_altitude:
             frac = ((altitude() - turn_start_altitude) /
                     (turn_end_altitude - turn_start_altitude))
             new_turn_angle = frac * 90
@@ -55,10 +55,11 @@ def autopilot(config: Config):
                 vessel.auto_pilot.target_pitch_and_heading(90 - turn_angle, 90)
 
         # Separate SRBs when finished
-        if not srbs_separated and srb_fuel() < 0.1:
-            vessel.control.activate_next_stage()
-            srbs_separated = True
-            print('SRBs separated')
+        if not srbs_separated:
+            if srb_fuel() < 0.1:
+                vessel.control.activate_next_stage()
+                srbs_separated = True
+                print('SRBs separated')
 
         # Decrease throttle when approaching target apoapsis
         if apoapsis() > target_altitude * 0.9:
@@ -101,13 +102,13 @@ def autopilot(config: Config):
     print('Orientating ship for circularization burn')
     vessel.auto_pilot.reference_frame = node.reference_frame
     vessel.auto_pilot.target_direction = (0, 1, 0)
+    '''vessel.auto_pilot.wait()'''
 
     # Wait until burn
     print('Waiting until circularization burn')
-    # burn_ut = ut() + vessel.orbit.time_to_apoapsis - (burn_time / 2.)
-    # lead_time = 5
-    # conn.space_center.warp_to(burn_ut - lead_time)
-
+    '''burn_ut = ut() + vessel.orbit.time_to_apoapsis - (burn_time / 2.)
+    lead_time = 5
+    conn.space_center.warp_to(burn_ut - lead_time)'''
     # Execute burn
     print('Ready to execute burn')
     time_to_apoapsis = conn.add_stream(getattr, vessel.orbit, 'time_to_apoapsis')
@@ -119,7 +120,7 @@ def autopilot(config: Config):
     print('Fine tuning')
     vessel.control.throttle = 0.05
     remaining_burn = conn.add_stream(node.remaining_burn_vector, node.reference_frame)
-    while remaining_burn()[0] > 0:
+    while remaining_burn()[1] > 0:
         pass
     vessel.control.throttle = 0.0
     node.remove()
