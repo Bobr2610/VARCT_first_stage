@@ -40,6 +40,11 @@ class Inaccuracy:
             inaccuracies['angle'].append(angle_inaccuracy)
             inaccuracies['mass'].append(mass_inaccuracy)
 
+        print(f'Среднее отклонение высоты: {sum(inaccuracies['height']) / len(inaccuracies['height'])}')
+        print(f'Среднее отклонение скорости: {sum(inaccuracies['speed']) / len(inaccuracies['speed'])}')
+        print(f'Среднее отклонение угла: {sum(inaccuracies['angle']) / len(inaccuracies['angle'])}')
+        print(f'Среднее отклонение массы: {sum(inaccuracies['mass']) / len(inaccuracies['mass'])}')
+
         plotter = Plotter(False)
         plotter.draw_once(self.times[3:],
                           (

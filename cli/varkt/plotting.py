@@ -65,7 +65,7 @@ class Plotter:
         self.height_graphic = Graphic(ax[0, 0],
                                       'Высота',
                                       'Время (с)',
-                                      'Высота (км)' if is_si else 'Отношение')
+                                      'Высота (м)' if is_si else 'Отношение')
         self.speed_graphic = Graphic(ax[0, 1],
                                      'Скорость',
                                      'Время (с)',
