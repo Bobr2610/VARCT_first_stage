@@ -25,7 +25,7 @@ class Inaccuracy:
                         'speed': [],
                         'angle': [],
                         'mass': []}
-        for i in range(len(self.flight_data['height'])):
+        for i in range(3, len(self.flight_data['height'])):
             height_inaccuracy = self.inaccuracy(self.flight_data['height'][i],
                                                 self.model_data['height'][i])
             speed_inaccuracy = self.inaccuracy(self.flight_data['speed'][i],
@@ -41,7 +41,7 @@ class Inaccuracy:
             inaccuracies['mass'].append(mass_inaccuracy)
 
         plotter = Plotter(False)
-        plotter.draw_once(self.times,
+        plotter.draw_once(self.times[3:],
                           (
                               inaccuracies['height'],
                               inaccuracies['speed'],
@@ -54,7 +54,7 @@ class Inaccuracy:
         plotter.save('inaccuracy.png')
 
         data = {}
-        for i, time in enumerate(self.times):
+        for i, time in enumerate(self.times[3:]):
             data[time] = {
                 'height': inaccuracies['height'][i],
                 'speed': inaccuracies['speed'][i],

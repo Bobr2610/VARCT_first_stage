@@ -19,7 +19,8 @@ def autopilot(config: Config):
     altitude = conn.add_stream(getattr, vessel.flight(), 'mean_altitude')
     apoapsis = conn.add_stream(getattr, vessel.orbit, 'apoapsis_altitude')
     stage_2_resources = vessel.resources_in_decouple_stage(stage=2, cumulative=False)
-    srb_fuel = conn.add_stream(stage_2_resources.amount, 'LiquidFuel')
+    liquid_fuel = conn.add_stream(stage_2_resources.amount, 'LiquidFuel')
+    srb_fuel = conn.add_stream(stage_2_resources.amount, 'SolidFuel')
 
     # Pre-launch setup
     vessel.control.sas = False
@@ -56,7 +57,7 @@ def autopilot(config: Config):
 
         # Separate SRBs when finished
         if not srbs_separated:
-            if srb_fuel() < 0.1:
+            if liquid_fuel() < 0.1:
                 vessel.control.activate_next_stage()
                 srbs_separated = True
                 print('SRBs separated')
